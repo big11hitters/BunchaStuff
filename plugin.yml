@@ -1,3 +1,65 @@
 name: BunchaStuff
 main: net.evolutionarygames.BunchaStuff.BunchaStuff
 version: 1.0
+
+commands:
+  heal:
+    description: Targeted player will be healed in full.
+    usage: /heal [player]
+    permission: 
+  strike:
+    description: Targeted player will be hit with lightning.
+    usage: /strike [player]
+    permission: 
+  smite:
+    description: Targeted player will be killed.
+    usage: /smite [player]
+    permission: 
+  ignite:
+    description: Targeted player will be set on fire for 5 seconds.
+    usage: /ignite [player]
+    permission: 
+  gms:
+    description: Targeted player's gamemode will be changed to Survival.
+    usage: /gms [player]
+    permission: 
+  gmc:
+    description: Targeted player's gamemode will be changed to Creative.
+    usage: /gmc [player]
+    permission: 
+  gma:
+    description: Targeted player's gamemode will be changed to Adventure.
+    usage: /gma [player]
+    permission: 
+permissions:
+  BunchaStuff.*:
+    description: Gives access to all BunchaStuff commands
+    children:
+      BunchaStuff.heal: true
+      BunchaStuff.smite: true
+      BunchaStuff.strike: true
+      BunchaStuff.ignite: true
+      BunchaStuff.gms: true
+      BunchaStuff.gmc: true
+      BunchaStuff.gma: true
+  BunchaStuff.heal:
+    description: Targeted player will be healed in full.
+    default: op
+  BunchaStuff.strike:
+    description: Targeted player will be hit with lightning.
+    default: op
+  BunchaStuff.smite:
+    description: Targeted player will be killed.
+    default: op
+  BunchaStuff.ignite:
+    description: Targeted player will be set on fire for 5 seconds.
+    default: op
+  BunchaStuff.gms:
+    description: Targeted player's gamemode will be changed to Survival.
+    default: op
+  BunchaStuff.gmc:
+    description: Targeted player's gamemode will be changed to Creative.
+    default: op
+  BunchaStuff.gma:
+    description: Targeted player's gamemode will be changed to Adventure.
+    default: op
