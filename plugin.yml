@@ -4,31 +4,35 @@ version: 1.0
 
 commands:
   heal:
-    description: Targeted player will be healed in full.
+    description: Targeted player or yourself(if no arguments) will be healed in full.
     usage: /heal [player]
-    permission: 
+    permission:
+  feed:
+    description: Targeted player or yourself(if no arguments) will be fed in full. 
+    usage: /feed [player]
+    permission:
   strike:
-    description: Targeted player will be hit with lightning.
+    description: Targeted player or yourself(if no arguments) will be hit with lightning.
     usage: /strike [player]
     permission: 
   smite:
-    description: Targeted player will be killed.
+    description: Targeted player or yourself(if no arguments) will be killed.
     usage: /smite [player]
     permission: 
   ignite:
-    description: Targeted player will be set on fire for 5 seconds.
+    description: Targeted player or yourself(if no arguments) will be set on fire for 5 seconds.
     usage: /ignite [player]
     permission: 
   gms:
-    description: Targeted player's gamemode will be changed to Survival.
+    description: Targeted player's gamemode or your's(if no arguments) will be changed to Survival.
     usage: /gms [player]
     permission: 
   gmc:
-    description: Targeted player's gamemode will be changed to Creative.
+    description: Targeted player's gamemode or your's(if no arguments) will be changed to Creative.
     usage: /gmc [player]
     permission: 
   gma:
-    description: Targeted player's gamemode will be changed to Adventure.
+    description: Targeted player's gamemode or your's(if no arguments) will be changed to Adventure.
     usage: /gma [player]
     permission: 
 permissions:
@@ -36,6 +40,7 @@ permissions:
     description: Gives access to all BunchaStuff commands
     children:
       BunchaStuff.heal: true
+      BunchaStuff.feed: true
       BunchaStuff.smite: true
       BunchaStuff.strike: true
       BunchaStuff.ignite: true
@@ -44,6 +49,9 @@ permissions:
       BunchaStuff.gma: true
   BunchaStuff.heal:
     description: Targeted player will be healed in full.
+    default: op
+  BunchaStuff.feed:
+    description: Targeted player will be fed in full.
     default: op
   BunchaStuff.strike:
     description: Targeted player will be hit with lightning.

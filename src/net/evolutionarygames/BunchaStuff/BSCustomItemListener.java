@@ -4,8 +4,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.event.Listener;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.block.Action;
-import org.bukkit.event.player.PlayerInteractEvent;
+//import org.bukkit.event.block.Action;
+//import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -34,16 +34,17 @@ public class BSCustomItemListener implements Listener {
 		}
 		
 	}
-	@EventHandler
+	//TODO Fix the unhandled Exception when the player clicks a block or air with no items in their hand
+	/*@EventHandler
 	public void onInteract(PlayerInteractEvent evt){
 		Player player = evt.getPlayer();
 		if(evt.getItem().equals(Material.BLAZE_POWDER)){
-			if(evt.getAction().equals(Action.RIGHT_CLICK_AIR)){
+			if(evt.getAction().equals(Action.LEFT_CLICK_AIR)){
 				player.sendMessage("You clicked with the Flame Thrower");
 			}
-			else if(evt.getAction().equals(Action.RIGHT_CLICK_BLOCK)){
+			else if(evt.getAction().equals(Action.LEFT_CLICK_BLOCK)){
 				player.sendMessage("You clicked a block");
 			}
 		}
-	}
+	}*/
 }

@@ -5,7 +5,7 @@ import org.bukkit.plugin.PluginManager;
 //import org.bukkit.Server;
 
 public final class BunchaStuff extends JavaPlugin {
-	public String[] cmdNames = {"gms","gmc","gma","strike","smite","ignite","heal"};
+	public String[] cmdNames = {"gms","gmc","gma","strike","smite","ignite","heal","feed"};
 	@Override
 	public void onEnable(){
 		PluginManager pm = this.getServer().getPluginManager();
@@ -14,6 +14,7 @@ public final class BunchaStuff extends JavaPlugin {
 			getCommand(cmdNames[i]).setExecutor(new BSCommandExecutor(this));
 		}
 		pm.registerEvents(new BSCustomItemListener(this),this);
+		pm.registerEvents(new BSBowListener(this),this);
 	}
 	@Override
 	public void onDisable(){
