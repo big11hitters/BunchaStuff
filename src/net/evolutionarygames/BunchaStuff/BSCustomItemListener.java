@@ -5,8 +5,8 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.event.Listener;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.ProjectileHitEvent;
-//import org.bukkit.event.entity.ProjectileLaunchEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.enchantments.Enchantment;
@@ -43,19 +43,24 @@ public class BSCustomItemListener implements Listener {
 	public void OnPlayerInteract(PlayerInteractEvent event) {
 	    Player player = event.getPlayer();
 	    if (player.getItemInHand().getTypeId() == Material.BLAZE_POWDER.getId()){
-	    	if(player.hasPermission("BunchaStuff.flameThrower"))
-	    		player.launchProjectile(SmallFireball.class);
+	    	if(player.hasPermission("BunchaStuff.flameThrower")){
+	    		if(event.getAction().equals(Action.LEFT_CLICK_AIR))
+	    			player.launchProjectile(SmallFireball.class);
+	    	}
 	    	else
 	    		player.sendMessage("You do not have permission to use this item");
 	    }
 	    else if(player.getItemInHand().getTypeId() == Material.BLAZE_ROD.getId()){
-	    	if(player.hasPermission("BunchaStuff.explosionCharge"))
-	    		player.launchProjectile(LargeFireball.class);
+	    	if(player.hasPermission("BunchaStuff.explosionCharge")){
+	    		if(event.getAction().equals(Action.LEFT_CLICK_AIR))
+	    			player.launchProjectile(LargeFireball.class);
+	    	}
 	    	else
 	    		player.sendMessage("You do not have permission to use this item");
 	    }	
 
 	}
+
 	@EventHandler //this currently doesn't affect anything. I believe I need ProjectileLaunchEvent before this method
 	public void OnProjectileHit(ProjectileHitEvent evt){
 		Projectile proj = evt.getEntity();

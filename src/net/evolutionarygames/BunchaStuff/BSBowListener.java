@@ -34,17 +34,18 @@ public class BSBowListener implements Listener {
 				if(item.getTypeId() == Material.BOW.getId()){
 					switch(itemMeta.getDisplayName()){
 					case "Ender Bow": 
-						shooter.damage(3.0F);
+						shooter.setFallDistance(4.0F);
 						arrow.setBounce(false);
-						shooter.teleport(arrowLoc); break;
+						shooter.teleport(arrowLoc); 
+						arrow.remove();break;
 					case "Explosive Bow": 
 						arrow.setBounce(false);
-						shooter.getWorld().createExplosion(arrowLoc, 4.0F); break;
+						shooter.getWorld().createExplosion(arrowLoc, 2.5F);
+						arrow.remove();break;
 					case "Lightning Bow":
 						arrow.setBounce(false);
-						shooter.getWorld().strikeLightning(arrowLoc); break;
-					default: 
-						shooter.launchProjectile(Arrow.class); break;
+						shooter.getWorld().strikeLightning(arrowLoc);
+						arrow.remove();break;
 					}
 				}
 			}
