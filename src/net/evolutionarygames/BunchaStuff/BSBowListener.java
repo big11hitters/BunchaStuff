@@ -3,7 +3,6 @@ package net.evolutionarygames.BunchaStuff;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Arrow;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -35,11 +34,14 @@ public class BSBowListener implements Listener {
 				if(item.getTypeId() == Material.BOW.getId()){
 					switch(itemMeta.getDisplayName()){
 					case "Ender Bow": 
-						shooter.damage(2.0F);
+						shooter.damage(3.0F);
+						arrow.setBounce(false);
 						shooter.teleport(arrowLoc); break;
 					case "Explosive Bow": 
+						arrow.setBounce(false);
 						shooter.getWorld().createExplosion(arrowLoc, 4.0F); break;
 					case "Lightning Bow":
+						arrow.setBounce(false);
 						shooter.getWorld().strikeLightning(arrowLoc); break;
 					default: 
 						shooter.launchProjectile(Arrow.class); break;

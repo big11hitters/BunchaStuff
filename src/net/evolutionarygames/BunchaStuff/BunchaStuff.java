@@ -9,6 +9,7 @@ public final class BunchaStuff extends JavaPlugin {
 	@Override
 	public void onEnable(){
 		PluginManager pm = this.getServer().getPluginManager();
+		getLogger().info("Enabling BunchaStuff");
 		//Server server = getServer();
 		for(int i = 0; i < cmdNames.length; i++){
 			getCommand(cmdNames[i]).setExecutor(new BSCommandExecutor(this));
@@ -18,6 +19,6 @@ public final class BunchaStuff extends JavaPlugin {
 	}
 	@Override
 	public void onDisable(){
-		
+		getLogger().info("Disabling BunchaStuff");
 	}
 }

@@ -6,47 +6,52 @@ commands:
   heal:
     description: Targeted player or yourself(if no arguments) will be healed in full.
     usage: /heal [player]
-    permission:
+    permission: BunchaStuff.heal
+    permission-message: You do not have permission.
   feed:
     description: Targeted player or yourself(if no arguments) will be fed in full. 
     usage: /feed [player]
-    permission:
+    permission: BunchaStuff.feed
+    permission-message: You do not have permission.
   strike:
     description: Targeted player or yourself(if no arguments) will be hit with lightning.
     usage: /strike [player]
-    permission: 
+    permission: BunchaStuff.strike
+    permission-message: You do not have permission.
   smite:
     description: Targeted player or yourself(if no arguments) will be killed.
     usage: /smite [player]
-    permission: 
+    permission: BunchaStuff.smite
+    permission-message: You do not have permission. 
   ignite:
     description: Targeted player or yourself(if no arguments) will be set on fire for 5 seconds.
     usage: /ignite [player]
-    permission: 
+    permission: BunchaStuff.ignite
+    permission-message: You do not have permission.
   gms:
     description: Targeted player's gamemode or your's(if no arguments) will be changed to Survival.
     usage: /gms [player]
-    permission: 
+    permission: BunchaStuff.gms
+    permission-message: You do not have permission.
   gmc:
     description: Targeted player's gamemode or your's(if no arguments) will be changed to Creative.
     usage: /gmc [player]
-    permission: 
+    permission: BunchaStuff.gmc
+    permission-message: You do not have permission.
   gma:
     description: Targeted player's gamemode or your's(if no arguments) will be changed to Adventure.
     usage: /gma [player]
-    permission: 
+    permission: BunchaStuff.gma
+    permission-message: You do not have permission.
 permissions:
   BunchaStuff.*:
-    description: Gives access to all BunchaStuff commands
-    children:
-      BunchaStuff.heal: true
-      BunchaStuff.feed: true
-      BunchaStuff.smite: true
-      BunchaStuff.strike: true
-      BunchaStuff.ignite: true
-      BunchaStuff.gms: true
-      BunchaStuff.gmc: true
-      BunchaStuff.gma: true
+    description: Gives access to all BunchaStuff commands and weapons
+  BunchaStuff.flameThrower:
+    description: Gives access to flamethrower.
+    default: op
+  BunchaStuff.explosionCharge:
+    description: Gives access to explosioncharge.
+    default: op
   BunchaStuff.heal:
     description: Targeted player will be healed in full.
     default: op
