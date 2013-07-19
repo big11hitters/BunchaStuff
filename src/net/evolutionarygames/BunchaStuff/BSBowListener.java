@@ -1,7 +1,6 @@
 package net.evolutionarygames.BunchaStuff;
 
 import org.bukkit.Location;
-import org.bukkit.Material;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -31,23 +30,24 @@ public class BSBowListener implements Listener {
 				Location arrowLoc = arrow.getLocation();  
 				arrowLoc.setPitch(shooter.getLocation().getPitch());
 				arrowLoc.setYaw(shooter.getLocation().getYaw());
-				if(item.getTypeId() == Material.BOW.getId()){
-					switch(itemMeta.getDisplayName()){
-					case "Ender Bow": 
-						shooter.setFallDistance(4.0F);
-						arrow.setBounce(false);
-						shooter.teleport(arrowLoc); 
-						arrow.remove();break;
-					case "Explosive Bow": 
-						arrow.setBounce(false);
-						shooter.getWorld().createExplosion(arrowLoc, 2.5F);
-						arrow.remove();break;
-					case "Lightning Bow":
-						arrow.setBounce(false);
-						shooter.getWorld().strikeLightning(arrowLoc);
-						arrow.remove();break;
-					}
+				String bowName = itemMeta.getDisplayName();
+				if(bowName.equalsIgnoreCase("Ender Bow")){
+					shooter.setFallDistance(4.0F);
+					arrow.setBounce(false);
+					shooter.teleport(arrowLoc); 
+					arrow.remove();
 				}
+				else if(bowName.equalsIgnoreCase("Explosive Bow")){
+					arrow.setBounce(false);
+					shooter.getWorld().createExplosion(arrowLoc, 2.5F);
+					arrow.remove();
+				}
+				else if(bowName.equalsIgnoreCase("Lightning Bow")){
+					arrow.setBounce(false);
+					shooter.getWorld().strikeLightning(arrowLoc);
+					arrow.remove();
+				}
+				
 			}
 		}
 		
