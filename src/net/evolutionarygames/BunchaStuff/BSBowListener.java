@@ -39,13 +39,16 @@ public class BSBowListener implements Listener {
 				}
 				else if(bowName.equalsIgnoreCase("Explosive Bow")){
 					arrow.setBounce(false);
-					shooter.getWorld().createExplosion(arrowLoc, 2.5F);
+					shooter.getWorld().createExplosion(arrowLoc, 4.0F);
 					arrow.remove();
 				}
 				else if(bowName.equalsIgnoreCase("Lightning Bow")){
 					arrow.setBounce(false);
 					shooter.getWorld().strikeLightning(arrowLoc);
 					arrow.remove();
+				}
+				else{
+					shooter.getWorld().spawnArrow(arrowLoc, arrow.getVelocity(), 4F, 0.6F);
 				}
 				
 			}

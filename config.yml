@@ -1,8 +1,10 @@
 #Default configuration file for BunchaStuff -Anthony Vitale evolutionarygames.net
+CustomBows: true
+CustomItems: true
 CoalOre: 360
 RedstoneOre: 256
 IronOre: 396
 LapisOre: 260
 GoldOre: 262
 DiamondOre: 267
-Gravel: 4
+Gravel: 318

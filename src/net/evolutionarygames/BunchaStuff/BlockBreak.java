@@ -23,8 +23,7 @@ public class BlockBreak implements Listener{
 			evt.getBlock().getLocation().getWorld().dropItem(evt.getBlock().getLocation(),new ItemStack(plugin.getConfig().getInt("IronOre")));
 			break;
 		case 13: //gravel
-			for(int i =0; i<4; i++)
-				evt.getBlock().getLocation().getWorld().dropItem(evt.getBlock().getLocation(),new ItemStack(plugin.getConfig().getInt("Gravel")));
+			evt.getBlock().getLocation().getWorld().dropItem(evt.getBlock().getLocation(),new ItemStack(plugin.getConfig().getInt("Gravel")));
 			break;
 		}
 	}

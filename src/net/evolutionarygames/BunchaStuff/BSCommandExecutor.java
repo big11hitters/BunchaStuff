@@ -36,7 +36,6 @@ public class BSCommandExecutor implements CommandExecutor {
 			case 0:
 				//now check for the command. There must be an easier way to do this, but I can't think of it now.
 				//TODO Rework so case 0 and case 1 are not copy/pastes of each other
-
 				if(cmd.getName().equalsIgnoreCase("heal")){
 					player.setHealth(20.0F);
 					player.sendMessage("Healed " + player.getDisplayName());
